@@ -1,6 +1,6 @@
 import { Inter, Vazirmatn } from "next/font/google";
 import "./globals.css";
-
+import ReduxProvider from "@/components/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 const vazirmatn = Vazirmatn({ subsets: ["arabic"] });
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={vazirmatn.className}>
         {/* <Header /> */}
-        {children}
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

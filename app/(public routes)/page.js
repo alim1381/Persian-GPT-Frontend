@@ -1,13 +1,12 @@
 import Image from "next/image";
 import CSImage from "@/public/cs.png";
 import GptLogo from "@/public/ChatGPT_logo.svg";
-import { NewNews } from "../components/newNews/NewNews";
-import { Header } from "../components/header/Header";
+import { NewNews } from "@/components/newNews/NewNews";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <main dir="rtl" className="">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-10 lg:px-12">
           <NewNews text="این وبسایت به صورت رایگان دردسترس است" />
@@ -19,12 +18,18 @@ export default function Home() {
             مصنوعی با استفاده از هوش مصنوعی ChatGPT
           </p>
           <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:gap-4">
-            <a class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 focus:ring-4 focus:ring-emerald-500">
+            <Link
+              href={"/auth/register"}
+              class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 focus:ring-4 focus:ring-emerald-500"
+            >
               شروع رایگان
-            </a>
-            <a class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg border focus:ring-4 text-white border-neutral-700 hover:bg-neutral-700 focus:ring-neutral-800">
+            </Link>
+            <Link
+              href={"/about"}
+              class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg border focus:ring-4 text-white border-neutral-700 hover:bg-neutral-700 focus:ring-neutral-800"
+            >
               درباره ما
-            </a>
+            </Link>
           </div>
           <div class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
             <span class="font-semibold text-neutral-400 uppercase">
