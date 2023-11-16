@@ -5,12 +5,12 @@ function HambergerMenu() {
     <>
       <button
         type="button"
-        class="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-600"
+        className="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-600"
         aria-controls="mobile-menu-2"
         aria-expanded="false"
       >
         <svg
-          class="w-6 h-6"
+          className="w-6 h-6"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ function HambergerMenu() {
           ></path>
         </svg>
         <svg
-          class="hidden w-6 h-6"
+          className="hidden w-6 h-6"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"

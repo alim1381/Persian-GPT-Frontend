@@ -1,5 +1,5 @@
 "use client";
-import LoginFormInput from "@/components/input/LoginFormInput";
+import LoginFormInput from "@/components/Input/LoginFormInput";
 import { login } from "@/redux/futures/authSlice";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -8,10 +8,10 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 
 function Login() {
-  const [resError , setResError] = useState(null)
+  const [resError, setResError] = useState(null);
 
-  const router = useRouter()
-  const dispatch = useDispatch()
+  const router = useRouter();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -19,11 +19,10 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-
   const formOnSubmit = async (data) => {
     // console.log(process.env.APIS_BASE_URL);
     try {
-      setResError(null)
+      setResError(null);
       const res = await fetch(`http://localhost:4000/api/auth/login`, {
         method: "POST",
         headers: {
@@ -34,26 +33,26 @@ function Login() {
           password: data.password,
         }),
       });
-      const response = await res.json()
+      const response = await res.json();
 
       // operation
       switch (res.status) {
-        case 200 : 
-          dispatch(login(response.user))
-          localStorage.setItem("token" , JSON.stringify(response.user.token))
-          router.push('/chat')
+        case 200:
+          dispatch(login(response.user));
+          localStorage.setItem("token", JSON.stringify(response.user.token));
+          router.push("/chat");
 
-        case 400 : 
-          setResError(response.message || "خطا در برقراری ارتباط!")
+        case 400:
+          setResError(response.message || "خطا در برقراری ارتباط!");
 
-        case 404 : 
-          setResError(response.message || "خطا در برقراری ارتباط!")
+        case 404:
+          setResError(response.message || "خطا در برقراری ارتباط!");
 
-        default : 
-          setResError("خطا در برقراری ارتباط!")
+        default:
+          setResError("خطا در برقراری ارتباط!");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -63,10 +62,12 @@ function Login() {
         <h1 className="text-3xl text-white font-bold text-center mb-4">
           ورود به حساب
         </h1>
-        <p className={` text-center text-sm mb-8 font-semibold ${resError ? `text-red-500` : `text-neutral-500`} tracking-wide`}>
-          {
-            resError ? resError : "از طریق فرم زیر به حساب خود وارد شوید"
-          }
+        <p
+          className={` text-center text-sm mb-8 font-semibold ${
+            resError ? `text-red-500` : `text-neutral-500`
+          } tracking-wide`}
+        >
+          {resError ? resError : "از طریق فرم زیر به حساب خود وارد شوید"}
         </p>
       </div>
       <form onSubmit={handleSubmit(formOnSubmit)}>

@@ -1,6 +1,6 @@
 import { Inter, Vazirmatn } from "next/font/google";
 import "./globals.css";
-import ReduxProvider from "@/components/Provider";
+import ReduxProvider from "@/components/Providers/ReduxProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const vazirmatn = Vazirmatn({ subsets: ["arabic"] });

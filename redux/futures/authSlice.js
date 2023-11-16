@@ -15,7 +15,7 @@ export const auth = createSlice({
   reducers: {
     login: (state, action) => {
       return {
-        id: action.payload._id,
+        id: action.payload.id,
         phone: action.payload.phone,
         name: action.payload.name,
         credit: action.payload.credit,
