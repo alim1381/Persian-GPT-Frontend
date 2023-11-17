@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 function PageTitle() {
   const path = usePathname();
   return (
-    <h1 className=" text-center text-white font-bold text-lg">
+    <h1 className=" text-center text-white font-bold text-lg pb-2">
       {pathToTitle(path)}
     </h1>
   );

@@ -24,7 +24,7 @@ export function PrivateHeader() {
           <div className="flex items-center lg:order-2 gap-2">
             <Image src={CoinLogo} width={30} />
             <p className=" text-white text-lg font-bold">
-              {authData.credit ? authData.credit : "کاربر"}
+              {authData.credit !== null ? authData.credit : "اعتبار"}
             </p>
           </div>
         </div>

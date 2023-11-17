@@ -26,8 +26,14 @@ export const auth = createSlice({
     logout: () => {
       return initialState;
     },
+    changeCredit: (state , action) => {
+      return {
+        ...state,
+        credit: action.payload,
+      };
+    },
   },
 });
 
-export const { login, logout } = auth.actions;
+export const { login, logout, changeCredit } = auth.actions;
 export default auth.reducer;

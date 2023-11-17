@@ -13,14 +13,14 @@ export const messages = createSlice({
   name: "Message",
   initialState: initialState,
   reducers: {
-    addToMessages: (state, action) => {
-      return [
-        ...state,
-        ...action.payload
-      ];
+    addToFrontMessages: (state, action) => {
+      return [action.payload, ...state];
+    },
+    addToBackMessages: (state, action) => {
+      return [...state, ...action.payload];
     },
   },
 });
 
-export const { addToMessages } = auth.actions;
+export const { addToFrontMessages, addToBackMessages } = messages.actions;
 export default messages.reducer;
