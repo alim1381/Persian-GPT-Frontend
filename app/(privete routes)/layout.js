@@ -7,7 +7,7 @@ function PriveteRoutesLayout({ children }) {
   return (
     <PrivateRoutesProviders>
       <PrivateHeader />
-      <section className=" flex gap-5 p-5 pt-0">
+      <section className=" flex gap-5 p-5 pt-0 mx-auto max-w-screen-2xl">
         <SideBar />
         <section className=" w-10/12 max-lg:w-full bg-gradient-to-b from-neutral-800 rounded-3xl h-[85vh] pt-3">
           <PageTitle />

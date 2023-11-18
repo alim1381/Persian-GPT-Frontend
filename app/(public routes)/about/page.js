@@ -21,7 +21,7 @@ function About() {
         </p>
         <div className=" text-neutral-400 flex gap-9 justify-center max-sm:flex-col max-sm:gap-4">
           <p className=" hover:text-emerald-500 cursor-pointer transition">
-            عرفان
+            عرفان خاکی
           </p>
           <p className=" hover:text-emerald-500 cursor-pointer transition">
             اشکان مفیدی

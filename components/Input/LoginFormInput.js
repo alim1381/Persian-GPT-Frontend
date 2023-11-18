@@ -31,9 +31,7 @@ function LoginFormInput({
         <input
           className={
             error
-              ? ` w-full transition mt-2 ${
-                  focus ? "text-emerald-500" : "text-white"
-                } text-base px-4 py-2 border border-red-500 bg-neutral-800 focus:outline-none rounded-2xl`
+              ? ` w-full transition mt-2 text-red-500 text-base px-4 py-2 border border-red-500 bg-neutral-800 focus:outline-none rounded-2xl`
               : ` w-full transition mt-2 ${
                   focus ? "text-emerald-500" : "text-white"
                 } text-base px-4 py-2 border border-white bg-neutral-800 focus:outline-none rounded-2xl focus:border-emerald-500`
@@ -66,9 +64,7 @@ function LoginFormInput({
           <input
             className={
               error
-                ? ` w-full transition ${
-                    focus ? "text-emerald-500" : "text-white"
-                  } text-base px-4 py-2 border border-red-500 bg-neutral-800 focus:outline-none rounded-2xl`
+                ? ` w-full transition text-red-500 text-base px-4 py-2 border border-red-500 bg-neutral-800 focus:outline-none rounded-2xl`
                 : ` w-full transition ${
                     focus ? "text-emerald-500" : "text-white"
                   } text-base px-4 py-2 border border-white bg-neutral-800 focus:outline-none rounded-2xl focus:border-emerald-500`

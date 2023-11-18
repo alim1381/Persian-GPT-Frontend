@@ -6,7 +6,12 @@ import { addToFrontMessages } from "@/redux/futures/messageSlice";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-export function ChatInput({ showLoader, showModal, scrollToEnd }) {
+export function ChatInput({
+  showLoader,
+  showModal,
+  scrollToEnd,
+  setNewMessage,
+}) {
   // tools
   const dispatch = useDispatch();
 
@@ -35,6 +40,7 @@ export function ChatInput({ showLoader, showModal, scrollToEnd }) {
       dispatch(changeCredit(sendQuizRes.currentCredit));
       setQuiz("");
       scrollToEnd();
+      setNewMessage((prev) => prev + 1);
       showLoader(false);
 
       setTimeout(() => {

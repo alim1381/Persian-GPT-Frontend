@@ -95,6 +95,7 @@ function Chat() {
         scrollToEnd={scrollToEnd}
         showModal={setShowModal}
         showLoader={setLoading}
+        setNewMessage={setNewMessage}
       />
     </div>
   );

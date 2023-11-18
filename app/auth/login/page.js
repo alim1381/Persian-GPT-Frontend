@@ -1,5 +1,6 @@
 "use client";
 import LoginFormInput from "@/components/Input/LoginFormInput";
+import Loader from "@/components/Loader";
 import { login } from "@/redux/futures/authSlice";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -9,6 +10,7 @@ import { useDispatch } from "react-redux";
 
 function Login() {
   const [resError, setResError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
   const dispatch = useDispatch();
@@ -23,6 +25,7 @@ function Login() {
     // console.log(process.env.APIS_BASE_URL);
     try {
       setResError(null);
+      setLoading(true);
       const res = await fetch(`http://localhost:4000/api/auth/login`, {
         method: "POST",
         headers: {
@@ -41,24 +44,22 @@ function Login() {
           dispatch(login(response.user));
           localStorage.setItem("token", JSON.stringify(response.user.token));
           router.push("/chat");
-
-        case 400:
-          setResError(response.message || "خطا در برقراری ارتباط!");
-
-        case 404:
-          setResError(response.message || "خطا در برقراری ارتباط!");
+          setLoading(false);
 
         default:
-          setResError("خطا در برقراری ارتباط!");
+          setResError(response.message || "خطا در برقراری ارتباط");
+          setLoading(false);
       }
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
   return (
-    <div className="py-12 px-12 bg-neutral-800 rounded-2xl shadow-xl z-20 max-sm:rounded-none max-sm:w-screen max-sm:h-screen">
+    <div className=" relative py-12 px-12 bg-neutral-800 rounded-2xl shadow-xl z-20 max-sm:rounded-none max-sm:w-screen max-sm:h-screen">
       <div className=" flex flex-col items-center">
+        {loading && <Loader />}
         <h1 className="text-3xl text-white font-bold text-center mb-4">
           ورود به حساب
         </h1>
@@ -94,7 +95,14 @@ function Login() {
           />
         </div>
         <div className="text-center mt-6">
-          <button className="py-3 w-full text-xl text-white bg-emerald-500 transition hover:bg-emerald-600 rounded-2xl">
+          <button
+            disabled={loading}
+            className={
+              loading
+                ? "py-3 w-full text-xl text-white bg-neutral-600 transition hover:bg-emerald-600 rounded-2xl"
+                : "py-3 w-full text-xl text-white bg-emerald-500 transition hover:bg-emerald-600 rounded-2xl"
+            }
+          >
             ورود
           </button>
           <p className="mt-4 text-sm text-white">
