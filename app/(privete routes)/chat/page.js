@@ -33,7 +33,7 @@ function Chat() {
   // get previous Messages
   useEffect(() => {
     if (!isFinishedMessage) {
-      setLoading(true)
+      setLoading(true);
       getPreviousMsg();
     }
   }, [pageNumber]);
@@ -42,12 +42,20 @@ function Chat() {
   useEffect(() => {
     if (previousMsgRes) {
       dispatch(addToBackMessages(previousMsgRes));
-      setLoading(false)
+      setLoading(false);
     }
     if (previousMsgRes !== null && previousMsgRes.length === 0) {
       setIsFinishedMessage(true);
     }
   }, [previousMsgRes]);
+
+  // errorboundry
+  useEffect(() => {
+    if (previousMsgErr) {
+      setLoading(false);
+      setShowModal(previousMsgErr?.message || "خطا در دریافت اطلاعات");
+    }
+  }, [previousMsgErr]);
 
   // scroll to end
   const scrollToEnd = () => {

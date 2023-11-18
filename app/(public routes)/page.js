@@ -37,11 +37,11 @@ export default function Home() {
             </span>
             <div className="flex justify-center items-center mt-8 text-neutral-500 gap-2">
               <p className=" text-neutral-200 font-extrabold">Chat GPT</p>
-              <Image src={GptLogo} width={50} />
+              <Image src={GptLogo} width={50} alt="Logo" priority={true} />
             </div>
           </div>
           <div className=" w-full flex justify-between relative">
-            <Image className=" mt-3" src={CSImage} width={400} />
+            <Image className=" mt-3" src={CSImage} width={400} alt="Bot" priority={true} />
             <div
               aria-hidden="true"
               className=" max-sm:top-10 max-sm:right-0 absolute top-16 right-12 my-auto w-64 h-32 rotate-45 bg-gradient-to-r from-emerald-100 to-emerald-400 blur-3xl opacity-20"

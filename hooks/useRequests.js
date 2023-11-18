@@ -1,5 +1,6 @@
 "use client";
 
+import { isJson } from "@/helper/isJson";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -22,7 +23,11 @@ function useRequests({ path, method, header }) {
       method: method,
       headers: {
         ...header,
-        authorization: `bearer ${JSON.parse(localStorageToken)}`,
+        authorization: `bearer ${
+          isJson(localStorageToken)
+            ? JSON.parse(localStorageToken)
+            : localStorageToken
+        }`,
       },
     })
       .then(async (res) => {
@@ -47,7 +52,11 @@ function useRequests({ path, method, header }) {
       method: method,
       headers: {
         ...header,
-        authorization: `bearer ${JSON.parse(localStorageToken)}`,
+        authorization: `bearer ${
+          isJson(localStorageToken)
+            ? JSON.parse(localStorageToken)
+            : localStorageToken
+        }`,
       },
       body: JSON.stringify({
         ...data,

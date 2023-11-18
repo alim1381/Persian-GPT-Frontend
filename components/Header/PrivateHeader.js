@@ -15,14 +15,15 @@ export function PrivateHeader() {
             <Image
               src={LOGO}
               className="mr-3 w-8 h-8 sm:h-9"
-              alt="Flowbite Logo"
+              alt="Logo"
+              priority={true}
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
               GPT پرشین
             </span>
           </Link>
           <div className="flex items-center lg:order-2 gap-2">
-            <Image src={CoinLogo} width={30} />
+            <Image src={CoinLogo} width={30} alt="coin Logo" priority={true} />
             <p className=" text-white text-lg font-bold">
               {authData.credit !== null ? authData.credit : "اعتبار"}
             </p>

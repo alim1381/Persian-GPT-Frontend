@@ -39,6 +39,8 @@ function About() {
             className=" absolute left-10 mt-3  max-sm:static"
             src={CSImage}
             width={400}
+            alt="Bot"
+            priority={true}
           />
           <div
             aria-hidden="true"

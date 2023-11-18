@@ -28,7 +28,7 @@ function MsgErrorModal({ content, close }) {
             </svg>
           </button>
           <div className="w-12 h-12 rounded-full bg-red-900 p-2 flex items-center justify-center mx-auto mb-3.5">
-            <Image src={XSvg} alt="x" />
+            <Image src={XSvg} alt="x" priority={true} />
           </div>
           <p className="mb-4 text-lg font-semibold text-white">
             خطا در انجام عملیات

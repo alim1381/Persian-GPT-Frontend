@@ -8,7 +8,7 @@ export function Header() {
       <nav className=" border-gray-200 px-4 lg:px-6 py-2.5 bg-neutral-800">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link href="/" className="flex items-center">
-            <Image src={LOGO} className="mr-3 w-8 h-8 sm:h-9" alt="Flowbite Logo" />
+            <Image src={LOGO} className="mr-3 w-8 h-8 sm:h-9" alt="Logo" priority={true} />
             <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
               GPT پرشین
             </span>
