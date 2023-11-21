@@ -1,7 +1,6 @@
 import PrivateRoutesProviders from "@/components/Providers/PriveteRoutesProvider";
 import { SideBar } from "@/components/Sidebar";
 import PageTitle from "@/components/Header/PageTitle";
-import HambergerMenu from "@/components/HambergerMenu";
 
 function PriveteRoutesLayout({ children }) {
   return (

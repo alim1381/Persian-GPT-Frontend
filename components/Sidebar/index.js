@@ -20,7 +20,7 @@ export function SideBar() {
           <Link href={"/credit"}>افزایش اعتبار</Link>
         </li>
         <li className="transition hover:bg-neutral-800 hover:text-white cursor-pointer p-2 px-5 w-full rounded-3xl">
-          خروج
+          <Link href={"/logout"}>خروج</Link>
         </li>
       </ul>
     </section>

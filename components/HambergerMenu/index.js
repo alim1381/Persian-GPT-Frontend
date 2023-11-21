@@ -64,9 +64,6 @@ function HambergerMenu() {
             />
           </svg>
         </div>
-        {/* <div className=" w-full">
-          <hr className="  border-dashed border-white border-[2px]" />
-        </div> */}
         <ul className=" text-white flex flex-col items-center gap-3 px-2 mt-4 font-bold text-center">
           <li className="transition hover:bg-emerald-500 hover:text-white cursor-pointer p-2 px-5 w-full rounded-3xl">
             <Link href={"/chat"}>صفحه اصلی</Link>
@@ -78,7 +75,7 @@ function HambergerMenu() {
             <Link href={"/credit"}>افزایش اعتبار</Link>
           </li>
           <li className="transition hover:bg-emerald-500 hover:text-white cursor-pointer p-2 px-5 w-full rounded-3xl">
-            خروج
+            <Link href={"/logout"}>خروج</Link>
           </li>
         </ul>
       </div>
