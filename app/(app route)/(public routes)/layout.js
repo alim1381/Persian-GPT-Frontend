@@ -4,7 +4,6 @@ import { Header } from "@/components/Header";
 function PublicLayout({ children }) {
   return (
     <>
-      <Header />
       {children}
     </>
   );

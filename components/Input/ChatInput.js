@@ -5,6 +5,7 @@ import { changeCredit } from "@/redux/futures/authSlice";
 import { addToFrontMessages } from "@/redux/futures/messageSlice";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import HambergerMenu from "../HambergerMenu";
 
 export function ChatInput({
   showLoader,
@@ -61,6 +62,7 @@ export function ChatInput({
   return (
     <form onSubmit={sendRequest} className=" absolute bottom-0 w-full">
       <div className="flex items-center px-3 py-2 rounded-lg">
+        <HambergerMenu/>
         <textarea
           id="chat"
           rows="1"

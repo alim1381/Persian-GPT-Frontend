@@ -5,7 +5,7 @@ import Link from "next/link";
 export function SideBar() {
   return (
     <section className=" w-2/12 bg-gradient-to-b rounded-3xl from-emerald-500 flex flex-col items-center max-lg:hidden">
-      <Image src={BlackLogo} alt="logo gpt" priority={true}/>
+      <Image src={BlackLogo} alt="logo gpt" priority={true} />
       <div className=" w-4/5 ">
         <hr className="  border-dashed border-neutral-800 border-[2px]" />
       </div>

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { ChatInput } from "../../../components/Input/ChatInput";
+import { ChatInput } from "@/components/Input/ChatInput";
 import Message from "@/components/Chat/Message";
 import { useDispatch, useSelector } from "react-redux";
 import useRequests from "@/hooks/useRequests";

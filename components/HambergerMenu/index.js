@@ -1,13 +1,17 @@
-import React from "react";
+"use client";
+import Link from "next/link";
+import { useState } from "react";
 
 function HambergerMenu() {
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <>
       <button
         type="button"
-        className="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-600"
+        className=" items-center p-2 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-600"
         aria-controls="mobile-menu-2"
         aria-expanded="false"
+        onClick={() => setShowMenu(true)}
       >
         <svg
           className="w-6 h-6"
@@ -34,6 +38,50 @@ function HambergerMenu() {
           ></path>
         </svg>
       </button>
+
+      <div
+        className={` fixed top-0 lg:hidden left-0 z-40 w-1/3 max-sm:w-full transition ${
+          showMenu ? `translate-x-0` : ` -translate-x-full`
+        } bg-neutral-900 h-screen`}
+      >
+        <div className=" flex justify-between items-center ">
+          <h1 className=" font-bold text-center p-5 text-xl text-white">
+            Persian GPT
+          </h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="#fff"
+            className="w-8 h-8 m-5"
+            onClick={() => setShowMenu(false)}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        {/* <div className=" w-full">
+          <hr className="  border-dashed border-white border-[2px]" />
+        </div> */}
+        <ul className=" text-white flex flex-col items-center gap-3 px-2 mt-4 font-bold text-center">
+          <li className="transition hover:bg-emerald-500 hover:text-white cursor-pointer p-2 px-5 w-full rounded-3xl">
+            <Link href={"/chat"}>صفحه اصلی</Link>
+          </li>
+          <li className="transition hover:bg-emerald-500 hover:text-white cursor-pointer p-2 px-5 w-full rounded-3xl">
+            <Link href={"/profile"}>اطلاعات کاربری</Link>
+          </li>
+          <li className="transition hover:bg-emerald-500 hover:text-white cursor-pointer p-2 px-5 w-full rounded-3xl">
+            <Link href={"/credit"}>افزایش اعتبار</Link>
+          </li>
+          <li className="transition hover:bg-emerald-500 hover:text-white cursor-pointer p-2 px-5 w-full rounded-3xl">
+            خروج
+          </li>
+        </ul>
+      </div>
     </>
   );
 }

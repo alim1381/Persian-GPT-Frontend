@@ -1,6 +1,5 @@
 import LOGO from "@/public/LOGOGREEN.svg";
 import Image from "next/image";
-import HambergerMenu from "../HambergerMenu";
 import Link from "next/link";
 export function Header() {
   return (
