@@ -25,7 +25,7 @@ function PrivateRoutesProviders({ children }) {
       }
 
       // check for valid token
-      fetch("http://localhost:4000/api/auth/verifytoken", {
+      fetch("https://persian-gpt-backend.vercel.app/api/auth/verifytoken", {
         method: "GET",
         headers: {
           authorization: `bearer ${

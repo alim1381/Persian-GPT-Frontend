@@ -19,7 +19,7 @@ function useRequests({ path, method, header }) {
 
   const getRequests = () => {
     setLoading(true);
-    fetch(`http://localhost:4000/api${path}`, {
+    fetch(`https://persian-gpt-backend.vercel.app/api${path}`, {
       method: method,
       headers: {
         ...header,
@@ -48,7 +48,7 @@ function useRequests({ path, method, header }) {
 
   const postRequests = (data) => {
     setLoading(true);
-    fetch(`http://localhost:4000/api${path}`, {
+    fetch(`https://persian-gpt-backend.vercel.app/api${path}`, {
       method: method,
       headers: {
         ...header,
